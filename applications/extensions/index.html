@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Extensions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="title">
+                <h2>
+                    OneStream Tab Killer
+                </h2>
+                <p>
+                    A browser extension to automatically  close OneStream browser login web pages.
+                </p>
+            </div>
+            <div class="installbox">
+                <div class="item">
+                    <img src="../../assets/images/chrome.png">
+                    <h3>Google Chrome</h3>
+                    <div class="button" onclick="openLink('https://chrome.google.com/webstore/detail/onestream-tab-killer/jpdfaahbmbjoiaoocecnpnmijcdgalim?hl=en')">
+                        <p>Install</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../../assets/images/edge.png">
+                    <h3>Microsoft Edge</h3>
+                    <div class="button" onclick="openLink('https://microsoftedge.microsoft.com/addons/detail/onestream-tab-killer/ohppckknencnjdfcjnaoklpahjfidhjb')">
+                        <p>Install</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mid">
+            <div class="box-mid">
+                <h2>Auto close tabs after successfully logging into or out of OneStream</h2>
+                <img src="../../assets/images/browser-1.png">
+            </div>
+            <div class="box-mid">
+                <h2>View extension and settings</h2>
+                <img src="../../assets/images/browser-2.png">
+            </div>
+            <div class="box-mid">
+                <h2>Optional notifications in place of closing tabs</h2>
+                <img src="../../assets/images/browser-3.png">
+            </div>
+        </div>
+    </div>
+    <script>
+const {shell} = require('electron');
+
+//link opener -----------------------------------
+function openLink(url){
+  shell.openExternal(url);
+}
+
+function openEdge(url){
+    shell.start
+}
+    </script>
+</body>
+</html>

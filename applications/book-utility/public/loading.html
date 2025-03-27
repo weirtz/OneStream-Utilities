@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inner">
+            <img src="../../../assets/images/loading-icon.svg">
+            <p>Loading</p>
+        </div>
+    </div>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            height:100vh;
+        }
+        .inner{
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+        }
+        .inner img{
+            animation: spin;
+            animation: spin 0.5s infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform:rotate(0deg);
+            }
+            to {
+                transform:rotate(360deg);
+            }
+        }
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+        }
+        body {
+            -webkit-user-select: none;
+            margin: 0px;
+        }
+    </style>
+</body>
+</html>

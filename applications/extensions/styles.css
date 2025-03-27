@@ -1,0 +1,183 @@
+@font-face {
+    font-family: "poppins-regular";
+    src: url("../../assets/fonts/poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: "poppins-light";
+    src: url("../../assets/fonts/poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: "poppins-semibold";
+    src: url("../../assets/fonts/poppins/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "poppins-bold";
+    src: url("../../assets/fonts/poppins/Poppins-Bold.ttf");
+}
+
+h1{
+    font-family: "poppins-bold";
+}
+
+h2{
+    font-family: "poppins-semibold";
+}
+
+h3{
+    font-family: "poppins-regular";
+}
+
+p{
+    font-family: "poppins-light";
+}
+
+body{
+    margin: 0px;
+    -webkit-user-select: none;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+   
+    right: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #e5e3ec;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #aaa8b3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #908e99;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+    background: #e5e3ec;
+  }
+  
+
+.item{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+.item img{
+    max-width: 40px;
+}
+.item h3{
+    margin-left: 10px;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: 200px;
+    margin-left: auto;
+    border-radius: 3px;
+    background-color: #3d4550;
+    color: white;
+    transition: 0.1s all;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: #4484ce;
+    scale: 1.05;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button:active{
+    transform: translateY(3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.item p{
+    margin:0px;
+    padding: 10px 0px;
+}
+.installbox{
+    min-width: 450px;
+    max-width: 550px;
+    border-radius: 5px;
+    border:2px solid rgb(234, 236, 243);
+    padding: 40px;
+    margin:40px auto;
+
+}
+
+.container{
+    padding: 0px 20px;
+}
+
+.title p{
+    margin:0px;
+}
+
+.title h2{
+    margin: 0px;
+}
+
+.title{
+    min-width: 450px;
+    max-width: 630px;
+    margin: 40px auto;
+}
+
+.mid{
+    min-width: 450px;
+    max-width: 630px;
+    margin: 0 auto;
+    
+}
+
+.box-mid{
+    margin-bottom: 80px;
+  
+}
+
+.mid img{
+    border-radius: 10px;
+    box-shadow: 
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+    max-width: 400px;
+}
+
+.box-mid:nth-child(1){
+    float: left;
+}
+
+.box-mid:nth-child(2){
+    float: right;
+    text-align: right;
+}
+
+.box-mid:nth-child(3){
+    float: left;
+    text-align: left;
+}

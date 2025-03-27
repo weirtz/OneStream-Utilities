@@ -1,0 +1,223 @@
+<!-- Brendan Weirtz | 3/28/23 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <title>Book Report Utility</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="head-inner">
+      <svg class="noselect" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        
+        <defs>
+          <linearGradient id="Gradient1">
+            <stop class="stop1" offset="24%" />
+            <stop class="stop2" offset="24%" />
+          </linearGradient>
+        </defs>
+        <style>
+          #outline {
+            fill: url(#Gradient1);
+          }
+          .stop1 {
+            stop-color: rgb(48, 48, 48);
+          }
+          .stop2 {
+            stop-color: orange;
+            stop-opacity: 100;
+          }
+        </style>
+        
+        <g>
+          <path id="outline" d="M431.8,127.7c6.4,2.8,9.5,7.8,9.5,14.8V440c0,4.9-2.1,9.4-6.4,13.2c-4.2,3.9-9.2,5.8-14.8,5.8c-16.2,0-24.4-6.4-24.4-19.1
+              V163.7c0-4.2-2.1-7.4-6.4-9.5L175.5,39.8c-11.3-3.5-23.3-1.8-36,5.3c-15.5,7.1-25.4,14.8-29.6,23.3l216,120.7
+              c6.4,2.8,9.5,7.8,9.5,14.8v291.2c0,7.8-3.2,12.7-9.5,14.8c-2.1,1.4-4.9,2.1-8.5,2.1c-4.9,0-8.5-0.7-10.6-2.1
+              c-2.8-2.1-38.5-24.5-106.9-67.2S94,376.8,87.7,373.3c-9.2-6.4-13.8-12.4-13.8-18L70.7,77.9c0-9.9,2.5-19.1,7.4-27.5
+              c9.9-16.2,27.9-29.8,54-40.8s46.6-12.5,61.4-4.8L431.8,127.7" />
+        </g>
+
+
+      </svg>
+      <p class="noselect">OneStream Book Report Utility <span class="version">Version: 1.0.0</span></p>
+    </div>
+  </div>
+  <div class="body-container">
+    <form id="file-upload-form" enctype="multipart/form-data">
+      <div class="form-container">
+        <div class="form-child1">
+          <div class="drop-container">
+            <div id="dropzone">
+              <p class="noselect">Drag and drop <span style="color:rgb(37, 99, 124)"><b>.pdfBook</b></span> or <span style="color:rgb(37, 99, 124)"><b>.xlBook</b></span> files here
+              </p>
+              <input class="noselect" type="file" id="file-input" accept=".pdfBook,.xlBook" name="pdfBookFiles" multiple>
+            </div>
+          </div>
+        </div>
+        <div class="form-child2">
+          <div class="radioOptions">
+            <label><input type="radio" name="extractType" value="process-cubeviews">Extract CubeViews in reports</label><br>
+            <label><input type="radio" name="extractType" value="process-reportnames">Extract report names</label>
+          </div>
+          <div class="task-buttons">
+            <a class="btn-1 btn-clr-1 noselect" id="extract-a-btn">Extract Book Reports</a>
+            <a class="btn-1 btn-clr-2 noselect" href="/download" id="download-a-btn" download>Save Report</a>
+            <a class="btn-1 btn-clr-3 noselect" id="delete-a-btn">Start New Extract</a>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="log-container-outter">
+      <p class="console-title noselect">APPLICATION LOG:</p>
+      <div class="log-container">
+        <div id="log"></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  const btnDownloadHide = document.getElementById('download-a-btn');
+  const form = document.getElementById('file-upload-form');
+  const extractBtn = document.getElementById('extract-a-btn');
+  const dropContainer = document.querySelector('.drop-container');
+  const fileInput = document.getElementById('file-input');
+  const deleteBtn = document.getElementById('delete-a-btn');
+  const fileInputField = document.getElementById('file-input');
+  const radioOptions = document.getElementsByName('extractType');
+
+  //file transfer/handler
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    const fileInput = document.getElementById('file-input');
+    const processType = document.querySelector('input[name="extractType"]:checked').value;
+    
+    // Append all selected files to the form data
+    for (let i = 0; i < fileInput.files.length; i++) {
+      formData.append('pdfBookFiles', fileInput.files[i]);
+      formData.append('processType', processType);
+    }
+
+    console.log(processType);
+
+    fetch('/upload-files', {
+      method: 'POST',
+      body: formData
+    })
+      .then((response) => {
+        // handle the response here
+        console.log(response);
+      })
+      .catch((error) => {
+        // handle any errors here
+        console.error(error);
+      });
+  });
+
+  //event listener for extract button. submits the form data without reloading page.
+  extractBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    document.getElementById('file-upload-form').dispatchEvent(new Event('submit'));
+  });
+
+  //update console log.
+  function updateLog() {
+    const logElem = document.getElementById('log');
+    const isScrolledToBottom = logElem.scrollHeight - logElem.clientHeight <= logElem.scrollTop + 1;
+    // Fetch the log data from the server and display it in the logging element
+    fetch('/log')
+      .then((res) => res.json())
+      .then((logs) => {
+        logElem.innerHTML = logs.map((log) => `<p>${log}</p>`).join('');
+        if (isScrolledToBottom) {
+          logElem.scrollTop = logElem.scrollHeight - logElem.clientHeight;
+        }
+      });
+  }
+  setInterval(updateLog, 500);
+
+  //drag and drop event listeners
+  dropContainer.addEventListener('drop', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    // Get the dropped files and add them to the file input element
+    const files = event.dataTransfer.files;
+    fileInput.files = files;
+  });
+
+  dropContainer.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  });
+
+  //listener for start new extract (delete) button
+  deleteBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    deleteFiles();
+  });
+
+  //delete files on server
+  function deleteFiles() {
+    fetch('/delete-files', {
+      method: 'POST'
+    })
+    fileInputField.value = '';
+  }
+
+  //Check for download file on server and show buttons
+  setInterval(() => {
+    fetch('/check-download', {
+      method: 'POST'
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.hasFiles) {
+          // Run the desired JavaScript code here
+          btnDownloadHide.classList.remove('hide-btn');
+          deleteBtn.classList.remove('hide-btn');
+        } else {
+          btnDownloadHide.classList.add('hide-btn');
+          deleteBtn.classList.add('hide-btn');
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, 500);
+
+  //Hide buttons on load
+  extractBtn.classList.add('hide-btn');
+  btnDownloadHide.classList.add('hide-btn');
+  deleteBtn.classList.add('hide-btn');
+
+  //delete files on load
+  deleteFiles(); 
+
+  //radio buttons
+
+  console.log(radioOptions);
+  for (let radio of radioOptions) {
+    console.log("add-listen");
+    radio.addEventListener('change', function(){
+      for (let radio of radioOptions) {
+            if (radio.checked) {
+              extractBtn.classList.remove('hide-btn');
+              break;
+            }else{
+              extractBtn.classList.add('hide-btn');
+            }
+         }
+    });
+  }
+</script>
+
+</html>

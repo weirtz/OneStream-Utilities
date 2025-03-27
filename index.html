@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OneStream Utilities</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Hero ------------------------------------------------------- -->
+  <div class="app-container" id="main">
+    <div class="hero">
+      <!-- Header ------------------------------------------------------- -->
+      <div class="header">
+        <div class="header-inner">
+          <!-- <img class="nav-button" id="create-shortcut" src="./assets/images/logo-grad.svg" alt="Create Shortcut"> -->
+          <img class="nav-button" id="close-button" src="./assets/images/button-close.svg" alt="Close">
+          <img class="nav-button" id="minimize-button" src="./assets/images/button-minimize.svg" alt="Minimize">
+        </div>
+      </div>
+      <!-- <div class="hero-inner"> -->
+      <div class="hero-inner-item">
+        <br>
+        <h2><b>OneStream</b> Utilities</h2>
+      </div>
+      <!-- </div> -->
+    </div>
+    <div class="side-main">
+      <div class="sidebar">
+        <a onclick="openLink('')">
+          <div class="side-item">
+            <div class="side-item-container">
+              <img src="./assets/images/servicenow2.png">
+              <h3>OneStream Service Now</h3>
+            </div>
+          </div>
+        </a>
+        <a onclick="openLink('')">
+          <div class="side-item">
+            <div class="side-item-container">
+              <img src="./assets/images/os-logo.png">
+              <h3>OneStream Portal</h3>
+            </div>
+          </div>
+        </a>
+        <a onclick="openLink('')">
+          <div class="side-item">
+            <div class="side-item-container">
+              <img src="./assets/images/solution.png">
+              <h3>Solution Exchange</h3>
+            </div>
+          </div>
+        </a>
+        <a onclick="openLink('')">
+          <div class="side-item">
+            <div class="side-item-container">
+              <img src="./assets/images/intune.png">
+              <h3>Company Portal Updates</h3>
+            </div>
+          </div>
+        </a>
+        <a id="appExtensions">
+          <div class="side-item">
+            <div class="side-item-container">
+              <img src="./assets/images/extensions.png">
+              <h3>Browser Extensions</h3>
+            </div>
+          </div>
+        </a>
+
+        <div class="side-item" id="appBookUtility">
+          <div class="side-item-container">
+            <img src="./assets/images/bookutility.png">
+            <h3>Book Report Utility</h3>
+          </div>
+        </div>
+
+        <!-- Folder ----------------------------- -->
+        <!-- <div class="side-item folder-icon">
+          <div class="side-item-container">
+            <img src="./assets/images/folder1.png">
+            <img src="./assets/images/folder2.png">
+            <h3>Resources</h3>
+          </div>
+        </div> -->
+
+        <!-- Folder ----------------------------- -->
+        <!-- <div class="side-item folder-icon">
+          <div class="side-item-container">
+            <img src="./assets/images/folder1.png">
+            <img src="./assets/images/folder2.png">
+            <h3>OneStream Resources</h3>
+          </div>
+        </div> -->
+
+        <div class="version">
+          <h3>Version: <span>1.0.0 indev 4</span></h3>
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="content-container-inner">
+          <div class="cc-inner">
+            <!-- <div class="launcher-title"><h3>Application Launcher</h3></div> -->
+            <div id="cards">
+              <!-- --------------------------------------------------------------------- -->
+              <!-- APP PRODUCTION --------------------------------------------------------->
+              <!-- --------------------------------------------------------------------- -->
+              <div class="card">
+                <div class="card-inner">
+                  <!-- App Launch ---------------------------------------- -->
+                  <div class="app-launch">
+                    <div class="app-flex-items" class="app-title">
+                      <h1>Production</h1>
+                      <div class="app-urls-button" onclick="dropdown('dd-1')">
+                        <h3>Application URLs</h3> <svg xmlns="http://www.w3.org/2000/svg" height="24"
+                          viewBox="0 -960 960 960" width="24">
+                          <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="app-flex-items" class="app-launch-button-container">
+                      <div id="run-prod" class="app-launch-button">
+                        <p>Start</p><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                          width="24">
+                          <path
+                            d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- App Urls --------------------------------------  -->
+                  <div id="dd-1" class="app-urls" style="max-height: 0px;">
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <div class="app-urls-container">
+                      <div class="url-item"><svg onclick="copy('url-prod-portal')" xmlns="http://www.w3.org/2000/svg"
+                          height="24" viewBox="0 -960 960 960" width="24">
+                          <path
+                            d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg></div>
+                      <div class="url-item">
+                        <h3>Portal/App</h3>
+                      </div>
+                      <div class="url-item"><input type="text" value="https://DOMAIN.onestreamcloud.com/OneStreamWeb"
+                          id="url-prod-portal" readonly></div>
+                    </div>
+
+                    <div class="app-urls-container">
+                      <div class="url-item"><svg onclick="copy('url-prod-windows')" xmlns="http://www.w3.org/2000/svg"
+                          height="24" viewBox="0 -960 960 960" width="24">
+                          <path
+                            d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg></div>
+                      <div class="url-item">
+                        <h3>Windows</h3>
+                      </div>
+                      <div class="url-item"><input type="text"
+                          value="https://DOMAIN.onestreamcloud.com/OneStreamWeb/OneStreamWindowsApp.aspx"
+                          id="url-prod-windows" readonly></div>
+                    </div>
+
+                    <div class="app-urls-container">
+                      <div class="url-item"><svg onclick="copy('url-prod-clickonce')" xmlns="http://www.w3.org/2000/svg"
+                          height="24" viewBox="0 -960 960 960" width="24">
+                          <path
+                            d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg></div>
+                      <div class="url-item">
+                        <h3>ClickOnce</h3>
+                      </div>
+                      <div class="url-item"><input type="text"
+                          value="https://DOMAIN.onestreamcloud.com/OneStreamWeb/ClickOnce/OneStreamDesktop/OneStreamDesktop.application"
+                          id="url-prod-clickonce" readonly></div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- --------------------------------------------------------------------- -->
+              <!-- APP QA --------------------------------------------------------->
+              <!-- --------------------------------------------------------------------- -->
+              <div class="card">
+                <div class="card-inner">
+                  <!-- App Launch ---------------------------------------- -->
+                  <div class="app-launch">
+                    <div class="app-flex-items" class="app-title">
+                      <h1>QA</h1>
+                      <div class="app-urls-button" onclick="dropdown('dd-2')">
+                        <h3>Application URLs</h3> <svg xmlns="http://www.w3.org/2000/svg" height="24"
+                          viewBox="0 -960 960 960" width="24">
+                          <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="app-flex-items" class="app-launch-button-container">
+                      <div id="run-qa" class="app-launch-button">
+                        <p>Start</p><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                          width="24">
+                          <path
+                            d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- App Urls --------------------------------------  -->
+                  <div id="dd-2" class="app-urls" style="max-height: 0px;">
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <div class="app-urls-container">
+                      <div class="url-item"><svg onclick="copy('url-qa-portal')" xmlns="http://www.w3.org/2000/svg"
+                          height="24" viewBox="0 -960 960 960" width="24">
+                          <path
+                            d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg></div>
+                      <div class="url-item">
+                        <h3>Portal/App</h3>
+                      </div>
+                      <div class="url-item"><input type="text" value="https://DOMAIN-qa.onestreamcloud.com/OneStreamWeb"
+                          id="url-qa-portal" readonly></div>
+                    </div>
+
+                    <div class="app-urls-container">
+                      <div class="url-item"><svg onclick="copy('url-qa-windows')" xmlns="http://www.w3.org/2000/svg"
+                          height="24" viewBox="0 -960 960 960" width="24">
+                          <path
+                            d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg></div>
+                      <div class="url-item">
+                        <h3>Windows</h3>
+                      </div>
+                      <div class="url-item"><input type="text"
+                          value="https://DOMAIN-qa.onestreamcloud.com/OneStreamWeb/OneStreamWindowsApp.aspx"
+                          id="url-qa-windows" readonly></div>
+                    </div>
+
+                    <div class="app-urls-container">
+                      <div class="url-item"><svg onclick="copy('url-qa-clickonce')" xmlns="http://www.w3.org/2000/svg"
+                          height="24" viewBox="0 -960 960 960" width="24">
+                          <path
+                            d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg></div>
+                      <div class="url-item">
+                        <h3>ClickOnce</h3>
+                      </div>
+                      <div class="url-item"><input type="text"
+                          value="https://DOMAIN-qa.onestreamcloud.com/OneStreamWeb/ClickOnce/OneStreamDesktop/OneStreamDesktop.application"
+                          id="url-qa-clickonce" readonly></div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- --------------------------------------------------------------------- -->
+              <!-- APP DEV --------------------------------------------------------->
+              <!-- --------------------------------------------------------------------- -->
+              <div class="card">
+                <div class="card-inner">
+                  <!-- App Launch ---------------------------------------- -->
+                  <div class="app-launch">
+                    <div class="app-flex-items" class="app-title">
+                      <h1>DEV</h1>
+                      <div class="app-urls-button" onclick="dropdown('dd-3')">
+                        <h3>Application URLs</h3> <svg xmlns="http://www.w3.org/2000/svg" height="24"
+                          viewBox="0 -960 960 960" width="24">
+                          <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="app-flex-items" class="app-launch-button-container">
+                      <div id="run-dev" class="app-launch-button">
+                        <p>Start</p><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                          width="24">
+                          <path
+                            d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- App Urls --------------------------------------  -->
+                  <div id="dd-3" class="app-urls" style="max-height: 0px;">
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <div class="app-urls-container">
+                      <div class="url-item"><svg onclick="copy('url-dev-portal')" xmlns="http://www.w3.org/2000/svg"
+                          height="24" viewBox="0 -960 960 960" width="24">
+                          <path
+                            d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg></div>
+                      <div class="url-item">
+                        <h3>Portal/App</h3>
+                      </div>
+                      <div class="url-item"><input type="text"
+                          value="https://DOMAIN-dev.onestreamcloud.com/OneStreamWeb" id="url-dev-portal" readonly>
+                      </div>
+                    </div>
+
+                    <div class="app-urls-container">
+                      <div class="url-item"><svg onclick="copy('url-dev-windows')" xmlns="http://www.w3.org/2000/svg"
+                          height="24" viewBox="0 -960 960 960" width="24">
+                          <path
+                            d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg></div>
+                      <div class="url-item">
+                        <h3>Windows</h3>
+                      </div>
+                      <div class="url-item"><input type="text"
+                          value="https://DOMAIN-dev.onestreamcloud.com/OneStreamWeb/OneStreamWindowsApp.aspx"
+                          id="url-dev-windows" readonly></div>
+                    </div>
+
+                    <div class="app-urls-container">
+                      <div class="url-item"><svg onclick="copy('url-dev-clickonce')" xmlns="http://www.w3.org/2000/svg"
+                          height="24" viewBox="0 -960 960 960" width="24">
+                          <path
+                            d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg></div>
+                      <div class="url-item">
+                        <h3>ClickOnce</h3>
+                      </div>
+                      <div class="url-item"><input type="text"
+                          value="https://DOMAIN-dev.onestreamcloud.com/OneStreamWeb/ClickOnce/OneStreamDesktop/OneStreamDesktop.application"
+                          id="url-dev-clickonce" readonly></div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- END APPS --------------------------------------------------------------------- -->
+              <div class="footer">
+                <label><input type="checkbox" id="SETTING-minOnRunApp"> Auto minimize window on OS start.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const { ipcRenderer, shell } = require('electron');
+    const closeApp = document.getElementById('close-button');
+    const createShortcut = document.getElementById('create-shortcut');
+    const minimizeApp = document.getElementById('minimize-button');
+    const runProd = document.getElementById('run-prod');
+    const runQA = document.getElementById('run-qa');
+    const runDev = document.getElementById('run-dev');
+
+    const runProdV8 = document.getElementById('run-prod-v8');
+    const runQAV8 = document.getElementById('run-qa-v8');
+    const runDevV8 = document.getElementById('run-dev-v8');
+
+    const SETTING_minOnRunApp = document.getElementById("SETTING-minOnRunApp");
+    const appBookUtility = document.getElementById('appBookUtility');
+    const appExtensions = document.getElementById('appExtensions');
+
+    //event listeners -----------------------------------
+    closeApp.addEventListener('click', () => {
+      ipcRenderer.send('close-app')
+    });
+
+    minimizeApp.addEventListener('click', () => {
+      ipcRenderer.send('minimize-app')
+    });
+
+    // createShortcut.addEventListener('click', () => {
+    // ipcRenderer.send('create-shortcut')
+    // });
+
+    runProd.addEventListener('click', () => {
+      ipcRenderer.send('run-prod')
+    });
+
+    runQA.addEventListener('click', () => {
+      ipcRenderer.send('run-qa')
+    });
+
+    runDev.addEventListener('click', () => {
+      ipcRenderer.send('run-dev')
+    });
+
+    // runProdV8.addEventListener('click', () => {
+    // ipcRenderer.send('run-prod-v8')
+    // });
+
+    // runQAV8.addEventListener('click', () => {
+    // ipcRenderer.send('run-qa-v8')
+    // });
+
+    // runDevV8.addEventListener('click', () => {
+    // ipcRenderer.send('run-dev-v8')
+    // });
+
+    appBookUtility.addEventListener('click', () => {
+      ipcRenderer.send('appBookUtility')
+    });
+
+    appExtensions.addEventListener('click', () => {
+      ipcRenderer.send('appExtensions')
+    });
+
+    SETTING_minOnRunApp.addEventListener('change', function () {
+      const isChecked = SETTING_minOnRunApp.checked;
+      ipcRenderer.send('setting-minOnRunApp', isChecked)
+    });
+
+    //receivers -----------------------------------
+    ipcRenderer.on('set-minOnRunApp', (event, value) => {
+      SETTING_minOnRunApp.checked = value;
+    })
+
+    // dropdowns -------------------------------
+    function dropdown(appDropdown) {
+      var dropdown = document.getElementById(appDropdown)
+
+      if (dropdown.style.maxHeight === "0px") {
+        dropdown.style.maxHeight = "300px";
+      } else {
+        dropdown.style.maxHeight = "0px";
+      }
+    }
+
+    //copy to clipboard -----------------------------------
+    function copy(URLInput) {
+      var text = document.getElementById(URLInput);
+      text.select();
+      document.execCommand("copy");
+      text.setSelectionRange(0, 0);
+      text.classList.add("copied");
+      text.addEventListener("animationend", function () {
+        text.classList.remove("copied");
+      })
+    }
+
+    //link opener -----------------------------------
+    function openLink(url) {
+      shell.openExternal(url);
+    }
+
+  </script>
+</body>
+
+</html>

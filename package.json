@@ -1,0 +1,56 @@
+{
+  "name": "onestream-utilities",
+  "version": "1.0.0-indev4",
+  "icon": "icon.png",
+  "description": "OneStream Utilities",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "build": {
+    "extraResources": "applications",
+    "files": [
+      "!applications"
+    ]
+  },
+  "files": [
+    "./applications/book-utility/server.js",
+    "./applications/book-utility/file-ripper.js",
+    "./applications/book-utility/file-ripper-reportNames.js"
+  ],
+  "keywords": [
+    "OneStream",
+    "Application",
+    "Launcher",
+    "Utilities",
+    "OneStream Utilities",
+    "Book Report Utility"
+  ],
+  "author": "weirtz",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "bootstrap": "^4.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.18.2",
+    "get-port": "^7.0.0",
+    "jquery": "^3.6.4",
+    "multer": "^1.4.5-lts.1",
+    "portfinder": "^1.0.32",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "@rabbitholesyndrome/electron-forge-maker-portable": "^0.1.1",
+    "browser-sync": "^2.29.1",
+    "electron": "^23.2.1",
+    "gulp": "^3.9.1"
+  }
+}
