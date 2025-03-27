@@ -5,3 +5,9 @@ OneStream multi-environment application launcher and utilities
 ```
 npm run start
 ```
+
+**Build Application**
+```
+npm run make
+```
+You can configure OS Build types within **forge.config.js**
