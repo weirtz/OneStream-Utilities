@@ -1,7 +1,9 @@
 # OneStream-Utilities
-OneStream multi-environment application launcher and utilities
+### OneStream multi-environment application launcher and utilities.
 
-  <img src="https://github.com/weirtz/OneStream-Utilities/blob/main/assets/images/Application-Preview.png?raw=true" width="350" display="inline">
+This application utilizes Microsoft Windows [ClickOnce](https://en.wikipedia.org/wiki/ClickOnce) application deployment feature. Although you can build for other platforms, the application will not work without this.
+
+<img src="https://github.com/weirtz/OneStream-Utilities/blob/main/assets/images/Application-Preview.png?raw=true" width="350">
 
 ### Run DEV environment application
 ```
