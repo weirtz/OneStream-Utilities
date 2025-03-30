@@ -1,16 +1,1 @@
-minimize on click
-settings page
-
-issue with files deleting endlessly is using .on instead of .once
-
- findAvailablePort(findingPort, (availablePort) =>{
-    server = spawn('node', ['./applications/book-utility/server.js', availablePort]);
-
-    server.stdout.once('data', (data) => {
-      console.log("[BU Node Server]: " + data);
-      
-      appBookUtility.loadURL('http://localhost:' + availablePort);
-      appBookUtility.focus();
-      
-    });
-  });
+Settings page
