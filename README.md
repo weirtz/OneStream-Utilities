@@ -27,6 +27,7 @@ By default, it will use **@electron-forge/maker-squirrel** for building a Window
 
 ## Included Utility: Book Report Utility
 <img src="https://github.com/weirtz/OneStream-Utilities/blob/main/assets/images/Application-Preview2.png?raw=true" width="450">
+Currently only functions running within an IDE.
 
 ## Updates to code you need to make
 As of now, the application information is hardcoded. You will need to go into the code before building and add your own Applications URLs to the code. Below are screenshots of the changes needed, marked in yellow is where to add your applications URLs
