@@ -12,16 +12,10 @@ const eventEmitter = new EventEmitter();
 
 function ripFiles(callback){
 
-
-
     console.log = (msg) => {
         oldConsoleLog.apply(console, arguments);
         eventEmitter.emit('log', msg);
       };
-
-
-
-
 
     const inputFilePath = 'applications/book-utility/files/input';
     const outputFile = 'applications/book-utility/files/output/report-names.xlsx';

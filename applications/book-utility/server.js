@@ -1,5 +1,4 @@
 //Node Server
-//Brendan Weirtz - 3/27/23
 
 const { spawn } = require('child_process');
 const { ripFiles, eventEmitter } = require('./file-ripper');
@@ -19,18 +18,18 @@ let isReadyTwo = false;
 
 console.log("Port received: " + port);
 
-// // Add headers before the routes are defined
+// Add headers before the routes are defined
 server.use(function (req, res, next) {
-//   // Website you wish to allow to connect
+  // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'http://' + hostURL + ':' + port);
-//   // Request methods you wish to allow
+  // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//   // Request headers you wish to allow
+  // Request headers you wish to allow
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-//   // Set to true if you need the website to include cookies in the requests sent
-//   // to the API (e.g. in case you use sessions)
+  // Set to true if you need the website to include cookies in the requests sent
+  // to the API (e.g. in case you use sessions)
   res.setHeader('Access-Control-Allow-Credentials', true);
-//   // Pass to next layer of middleware
+  // Pass to next layer of middleware
   next();
 });
 

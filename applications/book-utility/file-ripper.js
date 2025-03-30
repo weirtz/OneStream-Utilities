@@ -8,10 +8,12 @@ const EventEmitter = require('events');
 const eventEmitter = new EventEmitter();
 
 function ripFiles(callback){
+
     console.log = (msg) => {
         oldConsoleLog.apply(console, arguments);
         eventEmitter.emit('log', msg);
-      };
+    };
+
     const inputFilePath = 'applications/book-utility/files/input';
     const outputFile = 'applications/book-utility/files/output/cubeview-names.xlsx';
     
@@ -31,7 +33,6 @@ function ripFiles(callback){
     const fileNames = new Set();
     const cvANDfiles = new Array();
     
-
     //Loop through each input file and process it
     fs.readdirSync(inputFilePath).forEach((inputFile) => {
         let fileExt = new String;
@@ -113,7 +114,7 @@ function ripFiles(callback){
       try {
           // Add the current date to cell D1 of the report data worksheet
           const currentDate = new Date().toISOString().substring(0, 10);
-        //   XLSX.utils.sheet_add_aoa(worksheetFileNames, [["OneStream Book Report Utility v1.0.0"]], {origin: 'A3'});
+          // XLSX.utils.sheet_add_aoa(worksheetFileNames, [["OneStream Book Report Utility v1.0.0"]], {origin: 'A3'});
           XLSX.utils.sheet_add_aoa(worksheetFileNames, [["Report generated on: " +currentDate]], {origin: 'A4'});
           XLSX.utils.sheet_add_aoa(worksheetFileNames, [["Total files scanned: " +fileCount]], {origin: 'A5'});
           XLSX.utils.sheet_add_aoa(worksheetFileNames, [["Total CubeView references found: " +reportCount]], {origin: 'A6'});
@@ -150,13 +151,10 @@ function ripFiles(callback){
             console.log(`---------------------------------------------------------------------`);
             console.log(`&emsp;`);
         }
-
+        
         const filesRipped = false;
         callback(filesRipped, outputFile);
-
     }
-    
-    
 }
 
 module.exports = { ripFiles, eventEmitter };

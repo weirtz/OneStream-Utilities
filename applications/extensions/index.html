@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browser Extensions</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <div class="top">
@@ -14,21 +16,23 @@
                     OneStream Tab Killer
                 </h2>
                 <p>
-                    A browser extension to automatically  close OneStream browser login web pages.
+                    A browser extension to automatically close OneStream browser login web pages.
                 </p>
             </div>
             <div class="installbox">
                 <div class="item">
                     <img src="../../assets/images/chrome.png">
                     <h3>Google Chrome</h3>
-                    <div class="button" onclick="openLink('https://chrome.google.com/webstore/detail/onestream-tab-killer/jpdfaahbmbjoiaoocecnpnmijcdgalim?hl=en')">
+                    <div class="button"
+                        onclick="openLink('https://chrome.google.com/webstore/detail/onestream-tab-killer/jpdfaahbmbjoiaoocecnpnmijcdgalim?hl=en')">
                         <p>Install</p>
                     </div>
                 </div>
                 <div class="item">
                     <img src="../../assets/images/edge.png">
                     <h3>Microsoft Edge</h3>
-                    <div class="button" onclick="openLink('https://microsoftedge.microsoft.com/addons/detail/onestream-tab-killer/ohppckknencnjdfcjnaoklpahjfidhjb')">
+                    <div class="button"
+                        onclick="openLink('https://microsoftedge.microsoft.com/addons/detail/onestream-tab-killer/ohppckknencnjdfcjnaoklpahjfidhjb')">
                         <p>Install</p>
                     </div>
                 </div>
@@ -50,16 +54,17 @@
         </div>
     </div>
     <script>
-const {shell} = require('electron');
+        const { shell } = require('electron');
 
-//link opener -----------------------------------
-function openLink(url){
-  shell.openExternal(url);
-}
+        //link opener -----------------------------------
+        function openLink(url) {
+            shell.openExternal(url);
+        }
 
-function openEdge(url){
-    shell.start
-}
+        function openEdge(url) {
+            shell.start
+        }
     </script>
 </body>
+
 </html>
